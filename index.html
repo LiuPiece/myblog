@@ -64,6 +64,110 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PushBox-0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myblog/2021/07/15/PushBox-0/" class="article-date">
+  <time datetime="2021-07-15T03:25:48.000Z" itemprop="datePublished">2021-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myblog/2021/07/15/PushBox-0/">PushBox</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css'">鼠标链接</a><br>  <style><br>    body {<br>      min-height: 100vh;<br>      display: flex;<br>      justify-content: center;<br>      align-items: center;<br>      margin: 0;<br>      /* overflow: hidden; <em>/<br>    }<br>    .box {<br>      width: 600px;<br>      height: 600px;<br>      border: 1px solid #aaa;<br>      position: relative;<br>    }<br>    .box::before {<br>      content: ‘’;<br>      display: block;<br>      width: 10px;<br>      height: 60px;<br>      background: #fff;<br>      position: absolute;<br>      left: -1px;<br>    }<br>    .box::after {<br>      content: ‘’;<br>      display: block;<br>      width: 10px;<br>      height: 60px;<br>      background: #fff;<br>      position: absolute;<br>      bottom: 0px;<br>      right: -1px;<br>    }<br>    .diamond {<br>      box-sizing: border-box;<br>      border: 10px solid burlywood;<br>      width: 60px;<br>      height: 60px;<br>      /</em> background-color: burlywood; <em>/<br>      position: absolute;<br>      z-index: 1;<br>    }<br>    .diamond::before {<br>      content: ‘’;<br>      display: block;<br>      width: 30px;<br>      height: 30px;<br>      border-right: 6px solid burlywood;<br>      border-bottom: 6px solid burlywood;<br>      transform: rotate(45deg) translate(-15px, -15px);<br>    }<br>    .diamond::after {<br>      content: ‘’;<br>      display: block;<br>      width: 30px;<br>      height: 30px;<br>      border-left: 6px solid burlywood;<br>      border-top: 6px solid burlywood;<br>      transform: rotate(45deg) translate(-10px, -10px);<br>    }<br>    .menu {<br>      width: 100px;<br>      /</em> height: 200px; <em>/<br>      border: 1px solid #000;<br>      padding: 10px;<br>      display: none;<br>      position: fixed;<br>    }<br>    .menu ul{<br>      padding: 0;<br>      margin: 0;<br>    }<br>    .menu li{<br>      list-style: none;<br>    }<br>    .menu li i{<br>      margin-right:10px;<br>    }<br>    .menu li + li{<br>      border-top: 1px dotted #aaa;<br>    }<br>    /</em> .menu li:nth-last-child(1){<br>      border-bottom: none;<br>    } */<br>  </style></p>
+<body>
+  <div class="box">
+    <div class="diamond"></div>
+  </div>
+  <div class="menu">
+    <ul>
+      <li><i class="fa fa-folder-open" aria-hidden="true"></i>打开...</li>
+      <li><i class="fa fa-file" aria-hidden="true"></i> 新建...</li>
+      <li><i class="fa fa-floppy-o" aria-hidden="true"></i> 保存...</li>
+    </ul>
+  </div>
+  <script>
+    var diamond = document.querySelector('.diamond');
+    var position = {
+      left: 0,
+      top: 0,
+    }
+    document.body.addEventListener('keyup', function (event) {
+      console.log(event.keyCode);
+      if (event.keyCode === 38) {
+        console.log('往上移动');
+        position.top -= 60;
+        if (position.top < 0) {
+          position.top = 0;
+        }
+        diamond.style.top = position.top + 'px';
+      }
+      else if (event.keyCode === 40) {
+        console.log('往下移动');
+        position.top += 60;
+        if (position.top > 540) {
+          position.top = 540;
+        }
+        diamond.style.top = position.top + 'px';
+      }
+      else if (event.keyCode === 37) {
+        console.log('往左移动');
+        position.left -= 60;
+        if (position.left < 0) {
+          position.left = 0;
+        }
+        diamond.style.left = position.left + 'px';
+      }
+      else if (event.keyCode === 39) {
+        console.log('往右移动');
+        if (position.top >= 540 || position.left < 540) {
+          position.left += 60;
+          diamond.style.left = position.left + 'px';
+        }
+      }
+    })
+  </script>
+  **显示菜单**
+  <script>
+    var menu = document.querySelector('.menu');
+    document.body.addEventListener('contextmenu', function (event) {
+      event.preventDefault();
+      console.log(event);
+      var left = event.clientX;
+      var top = event.clientY;
+      menu.style.left = left + 'px';
+      menu.style.top = top + 'px';
+      menu.style.display = 'block';
+
+<pre><code>&#125;)
+</code></pre>
+<p>  </script></p>
+</body>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/15/PushBox-0/" data-id="ckr4corva0000i8u4abcebo4z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-temp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myblog/2021/07/14/temp/" class="article-date">
@@ -119,219 +223,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://example.com/2021/07/14/myfirstblog/" data-id="ckr360fb40001m0u45e4j61aw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pushBox" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myblog/2021/07/14/pushBox/" class="article-date">
-  <time datetime="2021-07-14T07:31:40.000Z" itemprop="datePublished">2021-07-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myblog/2021/07/14/pushBox/">pushBox</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>推箱子</title> -->
-<p><a href="'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css'">‘stylesheet’</a></p>
-  <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      /* overflow: hidden; */
-    }
-
-    .box {
-      width: 600px;
-      height: 600px;
-      border: 1px solid #aaa;
-      position: relative;
-    }
-
-    .box::before {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 60px;
-      background: #fff;
-      position: absolute;
-      left: -1px;
-    }
-
-    .box::after {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 60px;
-      background: #fff;
-      position: absolute;
-      bottom: 0px;
-      right: -1px;
-    }
-
-    .diamond {
-      box-sizing: border-box;
-      border: 10px solid burlywood;
-      width: 60px;
-      height: 60px;
-      /* background-color: burlywood; */
-      position: absolute;
-      z-index: 1;
-    }
-
-    .diamond::before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 30px;
-      border-right: 6px solid burlywood;
-      border-bottom: 6px solid burlywood;
-      transform: rotate(45deg) translate(-15px, -15px);
-    }
-
-    .diamond::after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 30px;
-      border-left: 6px solid burlywood;
-      border-top: 6px solid burlywood;
-      transform: rotate(45deg) translate(-10px, -10px);
-    }
-
-    .menu {
-      width: 100px;
-      /* height: 200px; */
-      border: 1px solid #000;
-      padding: 10px;
-      display: none;
-      position: fixed;
-    }
-    .menu ul{
-      padding: 0;
-      margin: 0;
-    }
-    .menu li{
-      list-style: none;
-    }
-    .menu li i{
-      margin-right:10px;
-    }
-    .menu li + li{
-      border-top: 1px dotted #aaa;
-    }
-    /* .menu li:nth-last-child(1){
-      border-bottom: none;
-    } */
-  </style>
-</head>
-
-<body>
-  <div class="box">
-    <div class="diamond"></div>
-  </div>
-
-  <div class="menu">
-    <ul>
-      <li><i class="fa fa-folder-open" aria-hidden="true"></i>打开...</li>
-      <li><i class="fa fa-file" aria-hidden="true"></i> 新建...</li>
-      <li><i class="fa fa-floppy-o" aria-hidden="true"></i> 保存...</li>
-    </ul>
-  </div>
-
-
-  <script>
-    var diamond = document.querySelector('.diamond');
-    var position = {
-      left: 0,
-      top: 0,
-    }
-    document.body.addEventListener('keyup', function (event) {
-      console.log(event.keyCode);
-      if (event.keyCode === 38) {
-        console.log('往上移动');
-        position.top -= 60;
-        if (position.top < 0) {
-          position.top = 0;
-        }
-        diamond.style.top = position.top + 'px';
-      }
-      else if (event.keyCode === 40) {
-        console.log('往下移动');
-        position.top += 60;
-        if (position.top > 540) {
-          position.top = 540;
-        }
-        diamond.style.top = position.top + 'px';
-      }
-      else if (event.keyCode === 37) {
-        console.log('往左移动');
-        position.left -= 60;
-        if (position.left < 0) {
-          position.left = 0;
-        }
-        diamond.style.left = position.left + 'px';
-      }
-      else if (event.keyCode === 39) {
-        console.log('往右移动');
-        if (position.top >= 540 || position.left < 540) {
-          position.left += 60;
-          diamond.style.left = position.left + 'px';
-        }
-      }
-    })
-  </script>
-
-  <!-- 显示菜单 -->
-  <script>
-    var menu = document.querySelector('.menu');
-    document.body.addEventListener('contextmenu', function (event) {
-      event.preventDefault();
-      console.log(event);
-      var left = event.clientX;
-      var top = event.clientY;
-      menu.style.left = left + 'px';
-      menu.style.top = top + 'px';
-      menu.style.display = 'block';
-
-    })
-  </script>
-
-</body>
-<!-- 
-</html> -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/pushBox/" data-id="ckr4b9n8u0000d8u4fc7td8pi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,15 +312,15 @@
       <ul>
         
           <li>
+            <a href="/myblog/2021/07/15/PushBox-0/">PushBox</a>
+          </li>
+        
+          <li>
             <a href="/myblog/2021/07/14/temp/">(no title)</a>
           </li>
         
           <li>
             <a href="/myblog/2021/07/14/myfirstblog/">myfirstblog</a>
-          </li>
-        
-          <li>
-            <a href="/myblog/2021/07/14/pushBox/">pushBox</a>
           </li>
         
           <li>
