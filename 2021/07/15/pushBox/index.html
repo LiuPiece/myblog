@@ -7,15 +7,15 @@
   
   <title>PushBox | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="显示菜单         body {       min-height: 100vh;       display: flex;       justify-content: center;       align-items: center;       margin: 0;       &#x2F;* overflow: hidden; *&#x2F;     }     .box {       width:">
+  <meta name="description" content="显示菜单鼠标链接 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586&lt;style&gt;  body &amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PushBox">
 <meta property="og:url" content="http://example.com/2021/07/15/PushBox/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="显示菜单         body {       min-height: 100vh;       display: flex;       justify-content: center;       align-items: center;       margin: 0;       &#x2F;* overflow: hidden; *&#x2F;     }     .box {       width:">
+<meta property="og:description" content="显示菜单鼠标链接 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586&lt;style&gt;  body &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-15T03:25:48.000Z">
-<meta property="article:modified_time" content="2021-07-15T03:36:26.864Z">
+<meta property="article:modified_time" content="2021-07-15T04:16:55.277Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -88,166 +88,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>显示菜单</strong></p>
-<!-- [鼠标链接]('https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css') -->
-  <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      /* overflow: hidden; */
-    }
-    .box {
-      width: 600px;
-      height: 600px;
-      border: 1px solid #aaa;
-      position: relative;
-    }
-    .box::before {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 60px;
-      background: #fff;
-      position: absolute;
-      left: -1px;
-    }
-    .box::after {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 60px;
-      background: #fff;
-      position: absolute;
-      bottom: 0px;
-      right: -1px;
-    }
-    .diamond {
-      box-sizing: border-box;
-      border: 10px solid burlywood;
-      width: 60px;
-      height: 60px;
-      /* background-color: burlywood; */
-      position: absolute;
-      z-index: 1;
-    }
-    .diamond::before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 30px;
-      border-right: 6px solid burlywood;
-      border-bottom: 6px solid burlywood;
-      transform: rotate(45deg) translate(-15px, -15px);
-    }
-    .diamond::after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 30px;
-      border-left: 6px solid burlywood;
-      border-top: 6px solid burlywood;
-      transform: rotate(45deg) translate(-10px, -10px);
-    }
-    .menu {
-      width: 100px;
-      /* height: 200px; */
-      border: 1px solid #000;
-      padding: 10px;
-      display: none;
-      position: fixed;
-    }
-    .menu ul{
-      padding: 0;
-      margin: 0;
-    }
-    .menu li{
-      list-style: none;
-    }
-    .menu li i{
-      margin-right:10px;
-    }
-    .menu li + li{
-      border-top: 1px dotted #aaa;
-    }
-    /* .menu li:nth-last-child(1){
-      border-bottom: none;
-    } */
-  </style>
-
-<body>
-  <div class="box">
-    <div class="diamond"></div>
-  </div>
-  <div class="menu">
-    <ul>
-      <li><i class="fa fa-folder-open" aria-hidden="true"></i>打开...</li>
-      <li><i class="fa fa-file" aria-hidden="true"></i> 新建...</li>
-      <li><i class="fa fa-floppy-o" aria-hidden="true"></i> 保存...</li>
-    </ul>
-  </div>
-  <script>
-    var diamond = document.querySelector('.diamond');
-    var position = {
-      left: 0,
-      top: 0,
-    }
-    document.body.addEventListener('keyup', function (event) {
-      console.log(event.keyCode);
-      if (event.keyCode === 38) {
-        console.log('往上移动');
-        position.top -= 60;
-        if (position.top < 0) {
-          position.top = 0;
-        }
-        diamond.style.top = position.top + 'px';
-      }
-      else if (event.keyCode === 40) {
-        console.log('往下移动');
-        position.top += 60;
-        if (position.top > 540) {
-          position.top = 540;
-        }
-        diamond.style.top = position.top + 'px';
-      }
-      else if (event.keyCode === 37) {
-        console.log('往左移动');
-        position.left -= 60;
-        if (position.left < 0) {
-          position.left = 0;
-        }
-        diamond.style.left = position.left + 'px';
-      }
-      else if (event.keyCode === 39) {
-        console.log('往右移动');
-        if (position.top >= 540 || position.left < 540) {
-          position.left += 60;
-          diamond.style.left = position.left + 'px';
-        }
-      }
-    })
-  </script>
-  <script>
-    var menu = document.querySelector('.menu');
-    document.body.addEventListener('contextmenu', function (event) {
-      event.preventDefault();
-      console.log(event);
-      var left = event.clientX;
-      var top = event.clientY;
-      menu.style.left = left + 'px';
-      menu.style.top = top + 'px';
-      menu.style.display = 'block';
-
-<pre><code>&#125;)
-</code></pre>
-<p>  </script></p>
-</body>
+        <p><strong>显示菜单</strong><br><a href="'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css'">鼠标链接</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    min-height: 100vh;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">    margin: 0;</span><br><span class="line">    /* overflow: hidden; */</span><br><span class="line">  &#125;</span><br><span class="line">  .box &#123;</span><br><span class="line">    width: 600px;</span><br><span class="line">    height: 600px;</span><br><span class="line">    border: 1px solid #aaa;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .box::before &#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height: 60px;</span><br><span class="line">    background: #fff;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: -1px;</span><br><span class="line">  &#125;</span><br><span class="line">  .box::after &#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 10px;</span><br><span class="line">    height: 60px;</span><br><span class="line">    background: #fff;</span><br><span class="line">    position: absolute;</span><br><span class="line">    bottom: 0px;</span><br><span class="line">    right: -1px;</span><br><span class="line">  &#125;</span><br><span class="line">  .diamond &#123;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    border: 10px solid burlywood;</span><br><span class="line">    width: 60px;</span><br><span class="line">    height: 60px;</span><br><span class="line">    /* background-color: burlywood; */</span><br><span class="line">    position: absolute;</span><br><span class="line">    z-index: 1;</span><br><span class="line">  &#125;</span><br><span class="line">  .diamond::before &#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line">    border-right: 6px solid burlywood;</span><br><span class="line">    border-bottom: 6px solid burlywood;</span><br><span class="line">    transform: rotate(45deg) translate(-15px, -15px);</span><br><span class="line">  &#125;</span><br><span class="line">  .diamond::after &#123;</span><br><span class="line">    content: &#x27;&#x27;;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line">    border-left: 6px solid burlywood;</span><br><span class="line">    border-top: 6px solid burlywood;</span><br><span class="line">    transform: rotate(45deg) translate(-10px, -10px);</span><br><span class="line">  &#125;</span><br><span class="line">  .menu &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    /* height: 200px; */</span><br><span class="line">    border: 1px solid #000;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    display: none;</span><br><span class="line">    position: fixed;</span><br><span class="line">  &#125;</span><br><span class="line">  .menu ul&#123;</span><br><span class="line">    padding: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  .menu li&#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">  &#125;</span><br><span class="line">  .menu li i&#123;</span><br><span class="line">    margin-right:10px;</span><br><span class="line">  &#125;</span><br><span class="line">  .menu li + li&#123;</span><br><span class="line">    border-top: 1px dotted #aaa;</span><br><span class="line">  &#125;</span><br><span class="line">  /* .menu li:nth-last-child(1)&#123;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">  &#125; */</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;diamond&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;menu&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li&gt;&lt;i class=&quot;fa fa-folder-open&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;打开...&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;i class=&quot;fa fa-file&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 新建...&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;i class=&quot;fa fa-floppy-o&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 保存...&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    var diamond = document.querySelector(&#x27;.diamond&#x27;);</span><br><span class="line">    var position = &#123;</span><br><span class="line">      left: 0,</span><br><span class="line">      top: 0,</span><br><span class="line">    &#125;</span><br><span class="line">    document.body.addEventListener(&#x27;keyup&#x27;, function (event) &#123;</span><br><span class="line">      console.log(event.keyCode);</span><br><span class="line">      if (event.keyCode === 38) &#123;</span><br><span class="line">        console.log(&#x27;往上移动&#x27;);</span><br><span class="line">        position.top -= 60;</span><br><span class="line">        if (position.top &lt; 0) &#123;</span><br><span class="line">          position.top = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        diamond.style.top = position.top + &#x27;px&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">      else if (event.keyCode === 40) &#123;</span><br><span class="line">        console.log(&#x27;往下移动&#x27;);</span><br><span class="line">        position.top += 60;</span><br><span class="line">        if (position.top &gt; 540) &#123;</span><br><span class="line">          position.top = 540;</span><br><span class="line">        &#125;</span><br><span class="line">        diamond.style.top = position.top + &#x27;px&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">      else if (event.keyCode === 37) &#123;</span><br><span class="line">        console.log(&#x27;往左移动&#x27;);</span><br><span class="line">        position.left -= 60;</span><br><span class="line">        if (position.left &lt; 0) &#123;</span><br><span class="line">          position.left = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        diamond.style.left = position.left + &#x27;px&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">      else if (event.keyCode === 39) &#123;</span><br><span class="line">        console.log(&#x27;往右移动&#x27;);</span><br><span class="line">        if (position.top &gt;= 540 || position.left &lt; 540) &#123;</span><br><span class="line">          position.left += 60;</span><br><span class="line">          diamond.style.left = position.left + &#x27;px&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    var menu = document.querySelector(&#x27;.menu&#x27;);</span><br><span class="line">    document.body.addEventListener(&#x27;contextmenu&#x27;, function (event) &#123;</span><br><span class="line">      event.preventDefault();</span><br><span class="line">      console.log(event);</span><br><span class="line">      var left = event.clientX;</span><br><span class="line">      var top = event.clientY;</span><br><span class="line">      menu.style.left = left + &#x27;px&#x27;;</span><br><span class="line">      menu.style.top = top + &#x27;px&#x27;;</span><br><span class="line">      menu.style.display = &#x27;block&#x27;;</span><br><span class="line">    &#125;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/15/PushBox/" data-id="ckr4dsj5n0000dsu4g7nr6bth" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/07/15/PushBox/" data-id="ckr4hal6v0001kcu4eooz288i" class="article-share-link">Share</a>
       
       
     </footer>
